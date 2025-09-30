@@ -1,0 +1,36 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environment variables
+*.env
+
+# IDE / Editor configs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Flask / instance folder (if you use it)
+instance/
+
+# Logs
+*.log
+
+# Database (if local sqlite is only for dev)
+*.sqlite3
+*.db
+
+# Compiled / build
+dist/
+build/
+*.egg-info/

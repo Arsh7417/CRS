@@ -7,12 +7,18 @@
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
+import os
 
 app = Flask(__name__)
 
 # Load the scaler, label encoder, model, and class names=====================
-scaler = pickle.load(open("Models/scaler.pkl", 'rb'))
-model = pickle.load(open("Models/model.pkl", 'rb'))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR = os.path.join(BASE_DIR, "Models")
+
+with open(os.path.join(MODELS_DIR, "scaler.pkl"), "rb") as f:
+    scaler = pickle.load(f)
+with open(os.path.join(MODELS_DIR, "model.pkl"), "rb") as f:
+    model = pickle.load(f)
 class_names = ['Lawyer', 'Doctor', 'Government Officer', 'Artist', 'Unknown',
                'Software Engineer', 'Teacher', 'Business Owner', 'Scientist',
                'Banker', 'Writer', 'Accountant', 'Designer',
